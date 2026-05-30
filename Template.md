@@ -94,4 +94,23 @@
       - If the Element itself contains comma, use double comma(,,) for literal comma.
   - Other custom prefixes: can be declared/defined according to Project features
 
+# Example
+## Example1-version0
+- Ps: A
+- Ojg: Understand How a document in the format above is structured.
+- Ojp: This is just an example: Ignore this when building a project.
+- Tel: Have a nice day!
+- Tel(1): Authored in 2026
+- Dsc: This is an example for how to use this format.
+- Dsc(1): Abbreviation is preferred in this document.
+- Rge: C:(Node 0, Node 1)
+- Com: C:(Node 0)
+  - Dsc: An example node under a Condition entry
+  - Ojg: Understand how a Component tree is formed
+  - Ps: A
+- Com: C:(Node 1)
+  - Dsc: Yet another component node
+  - Dsr: This node has no range other than itself
+  - Ps: A
+
 # Describe the Project here
