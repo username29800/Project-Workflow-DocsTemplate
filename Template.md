@@ -7,6 +7,7 @@
   - Every Version(State) is expressed in present tense, like the Version/Build is existent right now.
 - Keywords: The field that labels the information about each version's state and/or structure
   - Keyword lines are written like: '- [Keyword]: [content]'
+    - Every line except title and version must be a keyword line.
   - Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces)
   - Component: The component itself literally.
     - Can point to any type or kind of element in the project.
