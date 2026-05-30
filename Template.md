@@ -51,6 +51,7 @@
   - dRange: Range as a Description; Range expressed as one or more lines of Description instead of a list.
     - cannot be used with Range within a Component
     - abbrev: Dsr (Descriptive Range) / Rds (Range - Descriptive)
+      - prefer Dsr over Rds unless instructed otherwise
 
 
   - Goal: A field that tells/explains which feature or state is required by a Component
