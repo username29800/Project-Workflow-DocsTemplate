@@ -40,6 +40,8 @@
       - prefer Base to avoid confusion with other workflow templates.
   - R: (Real/Resource) The prefix that comes before a name of an Actually Existent Component, no whitespace allowed after colon(:).
   - C: (Conceptual) The prefix that comes before a name of Concept-Only/Abstract Component, no whitespace allowed after colon(:)
+    - The elements following any prefix can be grouped in parentheses. In this case, the prefix before group applies to every group element.
+    - Elements containing whitespace also must be nested in parentheses.
   - Other custom prefixes: can be declared/defined according to Project features
 
 # Describe the Project here
