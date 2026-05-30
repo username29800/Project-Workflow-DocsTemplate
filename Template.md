@@ -8,10 +8,14 @@
 - Keywords: The field that labels the information about each version's state and/or structure
   - Keyword lines are written like: '- [Keyword]: [content]'
     - Every line except title and version must be a keyword line.
+    - Only keywords listed below are allowed.
   - Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces)
   - Component: The component itself literally.
     - Can point to any type or kind of element in the project.
     - Component can belong to another Component, which is indicated by indentation (2 spaces).
+  - Text: The most basic entry. Plain literal text.
+    - This type of keyword line is for writing some trivial notes
+    - Or providing a string literal within the document.
   - Description: The field where a Component's feature and details are explained.
     - There can be multiple Description entries within a Component; Only if they're numbered and cannot be considered identical
     - e.g. There can exist Description: [content] and Description(2): [content]
