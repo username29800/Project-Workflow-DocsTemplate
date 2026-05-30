@@ -42,6 +42,8 @@
   - C: (Conceptual) The prefix that comes before a name of Concept-Only/Abstract Component, no whitespace allowed after colon(:)
     - The elements following any prefix can be grouped in parentheses. In this case, the prefix before group applies to every group element.
     - Elements containing whitespace also must be nested in parentheses.
+    - Group Elements are separated by comma(,)
+      - If the Element itself contains comma, use double comma(,,) for literal comma.
   - Other custom prefixes: can be declared/defined according to Project features
 
 # Describe the Project here
