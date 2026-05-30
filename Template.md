@@ -30,6 +30,9 @@
   - Component: The component itself literally.
     - Can point to any type or kind of element in the project.
     - Component can belong to another Component, which is indicated by indentation.
+    - Treating a Group itself as a Component is allowed, but this is not recommended.
+      - This kind of structure will break the Component tree.
+      - Instead, Create Conceptual Component(C:(Name)) and use Range(Rge) to assign a Group to a Component.
     - abbrev: Com (Component)
 
 
