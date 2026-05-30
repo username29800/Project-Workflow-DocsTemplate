@@ -37,7 +37,7 @@
     - This type of keyword line is for writing some trivial notes that are certainly not important
     - Or providing a string literal within the document.
     - For important things that don't have any proper keyword, use '- Prio(n): (type): (content)' instead.
-    - abbrev: Txl (Text literal)
+    - abbrev: Txl (Text literal) / Tel (Tell)
 
 
   - Description: The field where a Component's feature and details are explained.
