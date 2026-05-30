@@ -24,6 +24,7 @@
 
 
   - Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces)
+  - Below are the list of keywords and their usage:
 
 
   - Component: The component itself literally.
