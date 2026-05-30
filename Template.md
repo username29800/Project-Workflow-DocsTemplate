@@ -30,44 +30,59 @@
   - Component: The component itself literally.
     - Can point to any type or kind of element in the project.
     - Component can belong to another Component, which is indicated by indentation.
+    - abbrev: Com (Component)
 
 
   - Text: The most basic entry. Plain literal text.
     - This type of keyword line is for writing some trivial notes that are certainly not important
     - Or providing a string literal within the document.
     - For important things that don't have any proper keyword, use '- Prio(n): (type): (content)' instead.
+    - abbrev: Txl (Text literal)
 
 
   - Description: The field where a Component's feature and details are explained.
     - Description keyword without number is considered 'Description(0)', and is the main Description of the Component.
+    - abbrev: Dsc (Description)
 
 
   - Range: A line containing a list of Components under an Abstract Component(Not an actually existent Component; A Concept-Only Component for explaining, defining, or grouping one or more feature(s))
     - (OR) A line containing a list of Components under an Actually Existent Component
+    - abbrev: Rge (Range)
   - dRange: Range as a Description; Range expressed as one or more lines of Description instead of a list.
     - cannot be used with Range within a Component
+    - abbrev: Dsr (Descriptive Range)
 
 
   - Goal: A field that tells/explains which feature or state is required by a Component
+    - abbrev: Ojg (Objective - Goal)
   - Prio: A field where contains the most demanded work for now (now: the state expressed in a version)
+    - abbrev: Ojp (Objective - Priority)
 
 
   - Stage: A field that tells in which stage the Component is within a dev workflow
+    - abbrev: Ps (Progress stage)
     - Available Stages: Issue, Implement, Testing, Dev, Edge, Production, Stable(Fallback)
     - Issue: An Issue Occured, or An Idea is Issued
       - Idea only
       - A Stage where Implementation effort has not begun nor is planned
+      - abbrev: S0 (stage 0)
     - Implement: A Stage where the first Implementation is made
       - Before the first working Implementation is out
+      - abbrev: Si (Stage implementation)
     - Testing: A Stage where the Implementation is exposed to test cases, and then debugged
+      - abbrev: Sq (Stage QA)
     - Dev: A Stage where the Implemetation is included/merged as a part of the current Project
       - Compatibility and/or Dependency, etc. can be tested for seamless integration
+      - abbrev: Di (Developer Build integration)
     - Edge: A Stage where the current Project has a Developer Build that contains the Implementation
+      - abbrev: Dc (Developer Build - Release Candidate)
     - Production: A Stage where the Edge branch is stabilized enough to be pulled to Production for End-Users/EndPoints
       - A Stage where the actual Update/Release is generated for End-Users
       - Therefore, Production is the actual stable branch in normal Project workflows.
+      - abbrev: A (Available)
     - Stable/Base: The Stable Previous Version(Good ol' days version); A Stage that provides rollback/fallback when the latest development Build fails.
       - prefer Base to avoid confusion with other workflow templates.
+      - abbrev: Ab (Available - Base)
 
 
   - R: (Real/Resource) The prefix that comes before a name of an Actually Existent Component, no whitespace allowed after colon(:).
