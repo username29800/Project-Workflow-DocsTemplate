@@ -9,6 +9,7 @@
   - Keyword lines are written like: '- [Keyword]: [content]'
     - Every line except title and version must be a keyword line.
     - Only keywords listed below are allowed.
+    - The above equals to: "Every line, except '#(Title)' or '##(version)', **MUST** be formatted like: '(indentation)- (keyword): (content)' "
   - Every Keyword can be numbered like: '- \[keyword](\[number]): '
     - Keywords without numbers are considered '- \[keyword](0)', and have the highest priority among the lines with the same keyword.
   - Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces)
