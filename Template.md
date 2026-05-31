@@ -22,6 +22,11 @@
     - Dsc: The component itself literally. Points to any type or kind of element in the project.
     - Tel: abbrev: Com
     - Tel: Component can belong to another Component, which is indicated by indentation.
+    - Tel: A Component should contain: Dsc, Ps, Rge(or Dsr), Com(or Dss).
+    - Tel: Any component (except DocsComponent) that doesn't meet these requirement is considered NanoComponent, and is discouraged.
+    - Tel: Do not create an Empty Component or NanoComponent. Use Dss for NanoComponents Instead.
+    - Tel: A Component only containing Dsc and Tel is treated as DocsComponent
+    - Tel: DocsComponents are for providing Detailed Instructions or Information.
   - Com: C:(Text)
     - Dsc: Plain literal text for trivial notes or string literals.
     - Tel: abbrev: Txl / Tel
@@ -59,13 +64,13 @@
   - Dss: Stable/Base:: Previous version for rollback/fallback (abbrev: Ab).
 - Com: C:(Prefixes)
   - Dsc: Naming prefixes for Components.
-  - Dss: C:R:: (Real/Resource) Actually Existent Component. No whitespace after colon.
-  - Dss: C:C:: (Conceptual) Concept-Only/Abstract Component. No whitespace after colon.
-  - Dss: C:S:: Source code file, or a script file.
-  - Dss: C:A:: Asset resource (not source/script).
-  - Dss: C:I:: Internal files (e.g. .git).
-  - Dss: C:D:: Documentation file.
-  - Dss: C:M:: Symbol in a source file (Mark).
+  - Dss: C:R:: 'R', (Real/Resource) Actually Existent Component. No whitespace after colon.
+  - Dss: C:C:: 'C', (Conceptual) Concept-Only/Abstract Component. No whitespace after colon.
+  - Dss: C:S:: 'S', Source code file, or a script file.
+  - Dss: C:A:: 'A', Asset resource (not source/script).
+  - Dss: C:I:: 'I', Internal files (e.g. .git).
+  - Dss: C:D:: 'D', Documentation file.
+  - Dss: C:M:: 'M', Symbol in a source file (Mark).
   - Tel: Multiple prefixes separated by comma.
   - Tel: Elements in parentheses apply prefix to all. Whitespace elements must be in parentheses.
 
