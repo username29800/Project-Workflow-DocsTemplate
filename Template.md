@@ -42,7 +42,7 @@
     - Dsc: A list of Components under an Abstract or Actually Existent Component.
     - Tel: abbrev: Rge
   - Com: C:(dRange)
-    - Dsc: Range expressed as one or more lines of Description instead of a list.
+    - Dsc: Range expressed by explaining what should come under this component, instead of a formatted list.
     - Tel: abbrev: Dsr / Rds (prefer Dsr)
     - Tel(1): cannot be used with Range within a Component.
   - Com: C:(Goal)
