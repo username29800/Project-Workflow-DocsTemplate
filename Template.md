@@ -48,6 +48,7 @@
     - abbrev: Dsc (Description)
     - Dss: (Describe Subcomponent) An alternative description field for describing subcomponents without creating a new subcomponent node.
       - Use this to avoid creating too many Subcomponents.
+      - Important: Dss line should contain the subcomponent name and prefix for the subcomponent.
       - e.g. To describe a symbol(func or variable) in a Source code file.
 
 
@@ -107,6 +108,7 @@
     - A: (Asset) Resource that is not a source code or script
     - I: (Internal) files that are not used directly: e.g. .git
     - D: (Document) A Documentation file
+    - M: (Mark) A symbol in a source file
 
 # Example
 ## Example1-version0
