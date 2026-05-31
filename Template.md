@@ -51,7 +51,7 @@
   - Range: A line containing a list of Components under an Abstract Component(Not an actually existent Component; A Concept-Only Component for explaining, defining, or grouping one or more feature(s))
     - (OR) A line containing a list of Components under an Actually Existent Component
     - abbrev: Rge (Range)
-  - dRange: Range as a Description; Range expressed as one or more lines of Description instead of a list.
+  - dRange: a Description about what Components (do or would) belong to this Component; Range expressed as one or more lines of Description instead of a list.
     - cannot be used with Range within a Component
     - abbrev: Dsr (Descriptive Range) / Rds (Range - Descriptive)
       - prefer Dsr over Rds unless instructed otherwise
