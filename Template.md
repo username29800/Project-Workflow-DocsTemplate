@@ -1,116 +1,73 @@
-# Template Description for AI Agents/Human Readers
-## Basic Structure and Component Definition
-- '# Title': The title itself literally. Marks what the document is for.
-- '## (Condition)': A part(paragraph) of document where the project's status at a particular condition is stored in a form of Component tree
-  - The condition can be anything that distinguishes among subprojects.
-    - e.g. Timestamp, Edition, Version, Branch, Platform, etc.
-  - Every Version(State) is expressed in present tense, like the Version/Build is existent right now.
-
-
-- Keywords: The field that labels the information about each version's state and/or structure
-
-
-  - Keyword lines are written like: '- [Keyword]: [content]'
-    - Every line except title and version must be a keyword line.
-    - Only keywords listed below are allowed.
-    - The above equals to: "Every line, except '#(Title)' or '##(condition)', MUST be formatted like: '(indentation)(a single dash)(space)(keyword)(colon)(space)(content)' "
-    - Dss lines must start with: (indentation)(a single dash)(space)Dss(space)(prefix)(colon)(subcomponent name)(double colon)(space)
-
-    - This also means: "Titles(Headings beginning with #) are NOT allowed for keyword lines"
-
-
-  - Every Keyword can be numbered like: '- \[keyword](\[number]): '
-    - Keywords without numbers are considered '- \[keyword](0)', and have the highest priority among the lines with the same keyword.
-    - Keyword lines with lower numbering have higher priority over others.
-    - This feature is useful for grouping related keyword lines together.
-    - Dss lines must not be numbered.
-
-
-  - Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces)
-  - Below are the list of keywords and their usage:
-
-
-  - Component: The component itself literally.
-    - Can point to any type or kind of element in the project.
-    - Component can belong to another Component, which is indicated by indentation.
-    - Treating a Group itself as a Component is allowed, but this is not recommended.
-      - This kind of structure will break the Component tree.
-      - Instead, Create Conceptual Component(C:(Name)) and use Range(Rge) to assign a Group to a Component.
-    - abbrev: Com (Component)
-
-
-  - Text: The most basic entry. Plain literal text.
-    - This type of keyword line is for writing some trivial notes that are certainly not important
-    - Or providing a string literal within the document.
-    - For important things that don't have any proper keyword, use '- Prio(n): (type): (content)' instead.
-    - abbrev: Txl (Text literal) / Tel (Tell)
-
-
-  - Description: The field where a Component's feature and details are explained.
-    - Description keyword without number is considered 'Description(0)', and is the main Description of the Component.
-    - abbrev: Dsc (Description)
-  - Dss: (Describe Subcomponent) A field for describing subcomponents without creating a new subcomponent node.
-    - Use this to avoid creating too many Subcomponents.
-    - e.g. To describe a symbol(func or variable) in a Source code file.
-
-
-  - Range: A line containing a list of Components under an Abstract Component(Not an actually existent Component; A Concept-Only Component for explaining, defining, or grouping one or more feature(s))
-    - (OR) A line containing a list of Components under an Actually Existent Component
-    - abbrev: Rge (Range)
-  - dRange: a Description about what Components (do or would) belong to this Component; Range expressed as one or more lines of Description instead of a list.
-    - cannot be used with Range within a Component
-    - abbrev: Dsr (Descriptive Range) / Rds (Range - Descriptive)
-      - prefer Dsr over Rds unless instructed otherwise
-    - To Describe the Components under a Component in detail, Create a new component under the current component and use Dsc.
-    - To Describe a Subcomponent in detail without creating a new Component, use Dss.
-
-
-  - Goal: A field that tells/explains which feature or state is required by a Component
-    - abbrev: Ojg (Objective - Goal)
-  - Prio: A field where contains the most demanded work for now (now: the state expressed in a version)
-    - abbrev: Ojp (Objective - Priority)
-
-
-  - Stage: A field that tells in which stage the Component is within a dev workflow
-    - abbrev: Ps (Progress stage)
-    - Available Stages: Issue, Implement, Testing, Dev, Edge, Production, Stable(Fallback)
-    - Issue: An Issue Occured, or An Idea is Issued
-      - Idea only
-      - A Stage where Implementation effort has not begun nor is planned
-      - abbrev: S0 (stage 0)
-    - Implement: A Stage where the first Implementation is made
-      - Before the first working Implementation is out
-      - abbrev: Si (Stage implementation)
-    - Testing: A Stage where the Implementation is exposed to test cases, and then debugged
-      - abbrev: Sq (Stage QA)
-    - Dev: A Stage where the Implemetation is included/merged as a part of the current Project
-      - Compatibility and/or Dependency, etc. can be tested for seamless integration
-      - abbrev: Di (Developer Build integration)
-    - Edge: A Stage where the current Project has a Developer Build that contains the Implementation
-      - abbrev: Dc (Developer Build - Release Candidate)
-    - Production: A Stage where the Edge branch is stabilized enough to be pulled to Production for End-Users/EndPoints
-      - A Stage where the actual Update/Release is generated for End-Users
-      - Therefore, Production is the actual stable branch in normal Project workflows.
-      - abbrev: A (Available)
-    - Stable/Base: The Stable Previous Version(Good ol' days version); A Stage that provides rollback/fallback when the latest development Build fails.
-      - prefer Base to avoid confusion with other workflow templates.
-      - abbrev: Ab (Available - Base)
-
-
-  - R: (Real/Resource) The prefix that comes before a name of an Actually Existent Component, no whitespace allowed after colon(:).
-    - The name of a Component or an Element of a Group MUST start with one or more prefix(es).
-    - Each prefix should be separated by comma if there are more than one prefix.
-  - C: (Conceptual) The prefix that comes before a name of Concept-Only/Abstract Component, no whitespace allowed after colon(:)
-    - The elements following any prefix can be grouped in parentheses. In this case, the prefix before group applies to every group element.
-    - Elements containing whitespace also must be nested in parentheses.
-    - Group Elements are separated by comma(,)
-      - If the Element itself contains comma, use double comma(,,) for literal comma.
-  - S: (source) A Source code file, or a script file.
-  - A: (Asset) Resource that is not a source code or script (e.g. media files)
-  - I: (Internal) files that are not used directly: e.g. .git
-  - D: (Document) A Documentation file
-  - M: (Mark) A symbol in a source file
-  - Other custom prefixes: can be declared/defined according to Project features
+# Template Format Specification
+## Specification V1.0
+- Ps: Stable
+- Dsc: A golden standard Control-Plane Document Format for this Project.
+- Dsc(1): This Template is Self-Descriptive
+- Com: C:(Structure)
+  - Dsc: The basic structural elements of the document.
+  - Dss: # Title:: The title itself literally. Marks what the document is for.
+  - Dss: ## (Condition):: A part(paragraph) of document where the project's status at a particular condition is stored in a form of Component tree.
+  - Tel: Every Version(State) is expressed in present tense, like the Version/Build is existent right now.
+- Com: C:(Syntax)
+  - Dsc: Rules for writing keyword lines.
+  - Tel: Every line, except '#(Title)' or '##(condition)', MUST be formatted like: '(indentation)(a single dash)(space)(keyword)(colon)(space)(content)'.
+  - Tel: Titles(Headings beginning with #) are NOT allowed for keyword lines.
+  - Tel: Keyword lines can be numbered like: '- [keyword]([number]): '.
+  - Tel: Keywords without numbers are considered '- [keyword](0)', and have the highest priority among the lines with the same keyword.
+  - Tel: Keyword lines with lower numbering have higher priority over others.
+  - Tel: Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces).
+- Com: C:(Keywords)
+  - Dsc: The list of allowed keywords and their usage.
+  - Com: C:(Component)
+    - Dsc: The component itself literally. Points to any type or kind of element in the project.
+    - Tel: abbrev: Com
+    - Tel: Component can belong to another Component, which is indicated by indentation.
+  - Com: C:(Text)
+    - Dsc: Plain literal text for trivial notes or string literals.
+    - Tel: abbrev: Txl / Tel
+  - Com: C:(Description)
+    - Dsc: The field where a Component's feature and details are explained.
+    - Tel: abbrev: Dsc
+  - Com: C:(Dss)
+    - Dsc: (Describe Subcomponent) A field for describing subcomponents without creating a new subcomponent node.
+    - Tel: Syntax: (indentation)(a single dash)(space)Dss(space)(prefix)(colon)(subcomponent name)(double colon)(space)(description).
+    - Tel: Dss lines must not be numbered.
+  - Com: C:(Range)
+    - Dsc: A list of Components under an Abstract or Actually Existent Component.
+    - Tel: abbrev: Rge
+  - Com: C:(dRange)
+    - Dsc: Range expressed as one or more lines of Description instead of a list.
+    - Tel: abbrev: Dsr / Rds (prefer Dsr)
+    - Tel: cannot be used with Range within a Component.
+  - Com: C:(Goal)
+    - Dsc: Explains which feature or state is required by a Component.
+    - Tel: abbrev: Ojg
+  - Com: C:(Prio)
+    - Dsc: Contains the most demanded work for now.
+    - Tel: abbrev: Ojp
+  - Com: C:(Stage)
+    - Dsc: Tells in which stage the Component is within a dev workflow.
+    - Tel: abbrev: Ps
+- Com: C:(Stages)
+  - Dsc: Available dev workflow stages.
+  - Dss: Issue:: Idea only. Implementation effort has not begun (abbrev: S0).
+  - Dss: Implement:: First implementation is being made (abbrev: Si).
+  - Dss: Testing:: Implementation is exposed to test cases and debugged (abbrev: Sq).
+  - Dss: Dev:: Implementation is merged and integrated (abbrev: Di).
+  - Dss: Edge:: Developer Build contains the implementation (abbrev: Dc).
+  - Dss: Production:: Stabilized branch for End-Users. Actual update/release (abbrev: A).
+  - Dss: Stable/Base:: Previous version for rollback/fallback (abbrev: Ab).
+- Com: C:(Prefixes)
+  - Dsc: Naming prefixes for Components.
+  - Dss: C:R:: (Real/Resource) Actually Existent Component. No whitespace after colon.
+  - Dss: C:C:: (Conceptual) Concept-Only/Abstract Component. No whitespace after colon.
+  - Dss: C:S:: Source code file, or a script file.
+  - Dss: C:A:: Asset resource (not source/script).
+  - Dss: C:I:: Internal files (e.g. .git).
+  - Dss: C:D:: Documentation file.
+  - Dss: C:M:: Symbol in a source file (Mark).
+  - Tel: Multiple prefixes separated by comma.
+  - Tel: Elements in parentheses apply prefix to all. Whitespace elements must be in parentheses.
 
 # Example
 ## Example1-version0
@@ -132,4 +89,7 @@
   - Dsr: Any other subcomponent node under this component
   - Ps: A
 
-# Describe the Project here
+# Project Status
+## Initial
+- Dsc: Workspace initialized with Template.md.
+- Ps: Stable
