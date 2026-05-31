@@ -48,7 +48,7 @@
     - abbrev: Dsc (Description)
     - Dss: (Describe Subcomponent) An alternative description field for describing subcomponents without creating a new subcomponent node.
       - Use this to avoid creating too many Subcomponents.
-      - Important: Dss line should contain the subcomponent name and prefix for the subcomponent.
+      - Important: Dss line should start with: (indentation)(a single dash)(space)(prefix)(colon)(subcomponent name)(double colon)(space)
       - e.g. To describe a symbol(func or variable) in a Source code file.
 
 
