@@ -46,6 +46,9 @@
   - Description: The field where a Component's feature and details are explained.
     - Description keyword without number is considered 'Description(0)', and is the main Description of the Component.
     - abbrev: Dsc (Description)
+    - Dss: (Describe Subcomponent) An alternative description field for describing subcomponents without creating a new subcomponent node.
+      - Use this to avoid creating too many Subcomponents.
+      - e.g. To describe a symbol(func or variable) in a Source code file.
 
 
   - Range: A line containing a list of Components under an Abstract Component(Not an actually existent Component; A Concept-Only Component for explaining, defining, or grouping one or more feature(s))
@@ -55,6 +58,8 @@
     - cannot be used with Range within a Component
     - abbrev: Dsr (Descriptive Range) / Rds (Range - Descriptive)
       - prefer Dsr over Rds unless instructed otherwise
+    - To Describe the Components under a Component in detail, Create a new component under the current component and use Dsc.
+    - To Describe a Subcomponent in detail without creating a new Component, use Dss.
 
 
   - Goal: A field that tells/explains which feature or state is required by a Component
@@ -90,12 +95,18 @@
 
 
   - R: (Real/Resource) The prefix that comes before a name of an Actually Existent Component, no whitespace allowed after colon(:).
+    - The name of a Component or an Element of a Group MUST start with one or more prefix(es).
+    - Each prefix should be separated by comma if there are more than one prefix.
   - C: (Conceptual) The prefix that comes before a name of Concept-Only/Abstract Component, no whitespace allowed after colon(:)
     - The elements following any prefix can be grouped in parentheses. In this case, the prefix before group applies to every group element.
     - Elements containing whitespace also must be nested in parentheses.
     - Group Elements are separated by comma(,)
       - If the Element itself contains comma, use double comma(,,) for literal comma.
   - Other custom prefixes: can be declared/defined according to Project features
+    - S: (source) A Source code file, or a script file.
+    - A: (Asset) Resource that is not a source code or script
+    - I: (Internal) files that are not used directly: e.g. .git
+    - D: (Document) A Documentation file
 
 # Example
 ## Example1-version0
