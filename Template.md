@@ -6,29 +6,30 @@
 - Com: C:(Structure)
   - Dsc: The basic structural elements of the document.
   - Dss: # Title:: The title itself literally. Marks what the document is for.
-  - Dss: ## (Condition):: A part(paragraph) of document where the project's status at a particular condition is stored in a form of Component tree.
+  - Dss(1): ## (Condition):: A part(paragraph) of document where the project's status at a particular condition is stored in a form of Component tree.
   - Tel: Every Version(State) is expressed in present tense, like the Version/Build is existent right now.
 - Com: C:(Syntax)
   - Dsc: Rules for writing keyword lines.
   - Tel: Every line, except '#(Title)' or '##(condition)', MUST be formatted like: '(indentation)(a single dash)(space)(keyword)(colon)(space)(content)'.
   - Tel: Titles(Headings beginning with #) are NOT allowed for keyword lines.
-  - Tel: Keyword lines can be numbered like: '- [keyword]([number]): '.
-  - Tel: Keywords without numbers are considered '- [keyword](0)', and have the highest priority among the lines with the same keyword.
-  - Tel: Keyword lines with lower numbering have higher priority over others.
-  - Tel: Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces).
+  - Tel(1): Keyword lines can be numbered like: '- [keyword]([number]): '.
+  - Tel(2): Keywords without numbers are considered '- [keyword](0)', and have the highest priority among the lines with the same keyword.
+  - Tel(3): Keyword lines with lower numbering have higher priority over others.
+  - Tel(4): Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces).
 - Com: C:(Keywords)
   - Dsc: The list of allowed keywords and their usage.
   - Com: C:(Component)
     - Dsc: The component itself literally. Points to any type or kind of element in the project.
     - Tel: abbrev: Com
-    - Tel: Component can belong to another Component, which is indicated by indentation.
-    - Tel: A Component should contain: Dsc, Ps, Rge(or Dsr), Com(or Dss).
-    - Tel: Any component (except DocsComponent) that doesn't meet these requirement is considered NanoComponent, and is discouraged.
-    - Tel: Do not create an Empty Component or NanoComponent. Use Dss for NanoComponents Instead.
-    - Tel: A Component only containing Dsc and Tel is treated as DocsComponent
-    - Tel: DocsComponents are for providing Detailed Instructions or Information.
+    - Tel(1): Component can belong to another Component, which is indicated by indentation.
+    - Tel(2): A Component should contain: Dsc, Ps, Rge(or Dsr), Com(or Dss).
+    - Tel(3): Any component (except DocsComponent) that doesn't meet these requirement is considered NanoComponent, and is discouraged.
+    - Tel(4): Do not create an Empty Component or NanoComponent. Use Dss for NanoComponents Instead.
+    - Tel(5): A Component only containing Dsc and Tel(or Dss) is treated as DocsComponent
+    - Tel(6): DocsComponents are for providing Detailed Instructions or Information.
   - Com: C:(Text)
     - Dsc: Plain literal text for trivial notes or string literals.
+    - Tel: Tel lines are NOT important unless it is under DocsComponent.
     - Tel: abbrev: Txl / Tel
   - Com: C:(Description)
     - Dsc: The field where a Component's feature and details are explained.
@@ -36,43 +37,45 @@
   - Com: C:(Dss)
     - Dsc: (Describe Subcomponent) A field for describing subcomponents without creating a new subcomponent node.
     - Tel: Syntax: (indentation)(a single dash)(space)Dss(space)(prefix)(colon)(subcomponent name)(double colon)(space)(description).
-    - Tel: Dss lines must not be numbered.
+    - Tel(1): Dss lines must not be numbered.
   - Com: C:(Range)
     - Dsc: A list of Components under an Abstract or Actually Existent Component.
     - Tel: abbrev: Rge
   - Com: C:(dRange)
     - Dsc: Range expressed as one or more lines of Description instead of a list.
     - Tel: abbrev: Dsr / Rds (prefer Dsr)
-    - Tel: cannot be used with Range within a Component.
+    - Tel(1): cannot be used with Range within a Component.
   - Com: C:(Goal)
     - Dsc: Explains which feature or state is required by a Component.
     - Tel: abbrev: Ojg
   - Com: C:(Prio)
     - Dsc: Contains the most demanded work for now.
+    - Dsc(1): Can also contain some important notes.
     - Tel: abbrev: Ojp
   - Com: C:(Stage)
     - Dsc: Tells in which stage the Component is within a dev workflow.
     - Tel: abbrev: Ps
 - Com: C:(Stages)
   - Dsc: Available dev workflow stages.
-  - Dss: Issue:: Idea only. Implementation effort has not begun (abbrev: S0).
-  - Dss: Implement:: First implementation is being made (abbrev: Si).
-  - Dss: Testing:: Implementation is exposed to test cases and debugged (abbrev: Sq).
-  - Dss: Dev:: Implementation is merged and integrated (abbrev: Di).
-  - Dss: Edge:: Developer Build contains the implementation (abbrev: Dc).
-  - Dss: Production:: Stabilized branch for End-Users. Actual update/release (abbrev: A).
-  - Dss: Stable/Base:: Previous version for rollback/fallback (abbrev: Ab).
+  - Dss(0): Issue:: Idea only. Implementation effort has not begun (abbrev: S0).
+  - Dss(1): Implement:: First implementation is being made (abbrev: Si).
+  - Dss(2): Testing:: Implementation is exposed to test cases and debugged (abbrev: Sq).
+  - Dss(3): Dev:: Implementation is merged and integrated (abbrev: Di).
+  - Dss(4): Edge:: Developer Build contains the implementation (abbrev: Dc).
+  - Dss(5): Production:: Stabilized branch for End-Users. Actual update/release (abbrev: A).
+  - Dss(6): Stable/Base:: Previous version for rollback/fallback (abbrev: Ab).
 - Com: C:(Prefixes)
   - Dsc: Naming prefixes for Components.
-  - Dss: C:R:: 'R', (Real/Resource) Actually Existent Component. No whitespace after colon.
-  - Dss: C:C:: 'C', (Conceptual) Concept-Only/Abstract Component. No whitespace after colon.
-  - Dss: C:S:: 'S', Source code file, or a script file.
-  - Dss: C:A:: 'A', Asset resource (not source/script).
-  - Dss: C:I:: 'I', Internal files (e.g. .git).
-  - Dss: C:D:: 'D', Documentation file.
-  - Dss: C:M:: 'M', Symbol in a source file (Mark).
-  - Tel: Multiple prefixes separated by comma.
-  - Tel: Elements in parentheses apply prefix to all. Whitespace elements must be in parentheses.
+  - Dss(0): C:(Prefix R):: 'R', (Real/Resource) Actually Existent Component. No whitespace after colon.
+  - Dss(1): C:(Prefix C):: 'C', (Conceptual) Concept-Only/Abstract Component. No whitespace after colon.
+  - Dss(2): C:(Prefix S):: 'S', Source code file, or a script file.
+  - Dss(3): C:(Prefix A):: 'A', Asset resource (not source/script).
+  - Dss(4): C:(Prefix I):: 'I', Internal files (e.g. .git).
+  - Dss(5): C:(Prefix D):: 'D', Documentation file.
+  - Dss(6): C:(Prefix M):: 'M', Symbol in a source file (Mark).
+  - Tel(0): Multiple prefixes must be separated by comma.
+  - Tel(1): Prefix before parentheses apply prefix to all Group elements.
+  - Tel(2): Whitespace-containing elements must be in parentheses.
 
 # Example
 ## Example1-version0
@@ -94,7 +97,3 @@
   - Dsr: Any other subcomponent node under this component
   - Ps: A
 
-# Project Status
-## Initial
-- Dsc: Workspace initialized with Template.md.
-- Ps: Stable
