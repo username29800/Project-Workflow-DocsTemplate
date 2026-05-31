@@ -49,9 +49,9 @@
   - Description: The field where a Component's feature and details are explained.
     - Description keyword without number is considered 'Description(0)', and is the main Description of the Component.
     - abbrev: Dsc (Description)
-    - Dss: (Describe Subcomponent) An alternative description field for describing subcomponents without creating a new subcomponent node.
-      - Use this to avoid creating too many Subcomponents.
-      - e.g. To describe a symbol(func or variable) in a Source code file.
+  - Dss: (Describe Subcomponent) A field for describing subcomponents without creating a new subcomponent node.
+    - Use this to avoid creating too many Subcomponents.
+    - e.g. To describe a symbol(func or variable) in a Source code file.
 
 
   - Range: A line containing a list of Components under an Abstract Component(Not an actually existent Component; A Concept-Only Component for explaining, defining, or grouping one or more feature(s))
