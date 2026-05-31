@@ -105,12 +105,12 @@
     - Elements containing whitespace also must be nested in parentheses.
     - Group Elements are separated by comma(,)
       - If the Element itself contains comma, use double comma(,,) for literal comma.
+  - S: (source) A Source code file, or a script file.
+  - A: (Asset) Resource that is not a source code or script (e.g. media files)
+  - I: (Internal) files that are not used directly: e.g. .git
+  - D: (Document) A Documentation file
+  - M: (Mark) A symbol in a source file
   - Other custom prefixes: can be declared/defined according to Project features
-    - S: (source) A Source code file, or a script file.
-    - A: (Asset) Resource that is not a source code or script
-    - I: (Internal) files that are not used directly: e.g. .git
-    - D: (Document) A Documentation file
-    - M: (Mark) A symbol in a source file
 
 # Example
 ## Example1-version0
@@ -125,10 +125,11 @@
 - Com: C:(Node 0)
   - Dsc: An example node under a Condition entry
   - Ojg: Understand how a Component tree is formed
+  - Dss: D:Template.md:: A Golden standard Control-Plane Document Format for this Project
   - Ps: A
 - Com: C:(Node 1)
   - Dsc: Yet another component node
-  - Dsr: This node has no range other than itself
+  - Dsr: Any other subcomponent node under this component
   - Ps: A
 
 # Describe the Project here
