@@ -14,7 +14,7 @@
     - Every line except title and version must be a keyword line.
     - Only keywords listed below are allowed.
     - The above equals to: "Every line, except '#(Title)' or '##(condition)', MUST be formatted like: '(indentation)(a single dash)(space)(keyword)(colon)(space)(content)' "
-    - Dss lines must start with: (indentation)(a single dash)(space)(prefix)(colon)(subcomponent name)(double colon)(space)
+    - Dss lines must start with: (indentation)(a single dash)(space)Dss(space)(prefix)(colon)(subcomponent name)(double colon)(space)
 
     - This also means: "Titles(Headings beginning with #) are NOT allowed for keyword lines"
 
