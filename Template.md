@@ -14,6 +14,8 @@
     - Every line except title and version must be a keyword line.
     - Only keywords listed below are allowed.
     - The above equals to: "Every line, except '#(Title)' or '##(condition)', MUST be formatted like: '(indentation)(a single dash)(space)(keyword)(colon)(space)(content)' "
+    - Dss lines must start with: (indentation)(a single dash)(space)(prefix)(colon)(subcomponent name)(double colon)(space)
+
     - This also means: "Titles(Headings beginning with #) are NOT allowed for keyword lines"
 
 
@@ -21,6 +23,7 @@
     - Keywords without numbers are considered '- \[keyword](0)', and have the highest priority among the lines with the same keyword.
     - Keyword lines with lower numbering have higher priority over others.
     - This feature is useful for grouping related keyword lines together.
+    - Dss lines must not be numbered.
 
 
   - Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces)
@@ -48,7 +51,6 @@
     - abbrev: Dsc (Description)
     - Dss: (Describe Subcomponent) An alternative description field for describing subcomponents without creating a new subcomponent node.
       - Use this to avoid creating too many Subcomponents.
-      - Important: Dss line should start with: (indentation)(a single dash)(space)(prefix)(colon)(subcomponent name)(double colon)(space)
       - e.g. To describe a symbol(func or variable) in a Source code file.
 
 
