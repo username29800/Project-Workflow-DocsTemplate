@@ -51,6 +51,7 @@
   - Com: C:(Prio)
     - Dsc: Contains the most demanded work for now.
     - Dsc(1): Can also contain some important notes.
+    - Dsc(2): Notes are formatted like: (keyword line format)Ojp(colon)(space)(type)(double colon)(space)(content)
     - Tel: abbrev: Ojp
   - Com: C:(Stage)
     - Dsc: Tells in which stage the Component is within a dev workflow.
