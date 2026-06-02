@@ -89,7 +89,7 @@
   - Dss(8): C:(Prefix G):: 'G', Goal. Only used within a Range expression field of an Aco Object. (Goal)
   - Dss(8): C:(Prefix P):: 'P', Prio. Only used within a Range expression field of an Aco Object. (Priority)
   - Tel(0): Multiple prefixes must be separated by comma.
-  - Tel(1): Prefix before parentheses apply prefix to all Group elements.
+  - Tel(1): Prefix before parentheses apply prefix to all Group elements without any preceding prefix.
   - Tel(2): Whitespace-containing elements must be in parentheses.
 
 # Example
