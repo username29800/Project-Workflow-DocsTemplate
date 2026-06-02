@@ -12,8 +12,8 @@
   - Dsc: Rules for writing keyword lines.
   - Tel: Every line, except '#(Title)' or '##(condition)', MUST be formatted like: '(indentation)(a single dash)(space)(keyword)(colon)(space)(content)'.
   - Tel: Titles(Headings beginning with #) are NOT allowed for keyword lines.
-  - Tel(1): Keyword lines can be numbered like: '- [keyword]([number]): '.
-  - Tel(2): Keywords without numbers are considered '- [keyword](0)', and have the highest priority among the lines with the same keyword.
+  - Tel(1): Keyword lines can be numbered like: '- \[keyword\]([number]): '.
+  - Tel(2): Keywords without numbers are considered '- \[keyword\](0)', and have the highest priority among the lines with the same keyword.
   - Tel(3): Keyword lines with lower numbering have higher priority over others.
   - Tel(4): Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces).
 - Com: C:(Keywords)
@@ -27,6 +27,13 @@
     - Tel(4): Do not create an Empty Component or NanoComponent. Use Dss for NanoComponents Instead.
     - Tel(5): A Component only containing Dsc and Tel(or Dss) is treated as DocsComponent
     - Tel(6): DocsComponents are for providing Detailed Instructions or Information.
+  - Com: C:(Aco)
+    - Dsc: Anonymous Component Object - a One-liner expression for an unnamed, full-featured component
+    - Tel: Format: (indentation)(dash)(space)Aco(colon)(space)(Ps abbrev)(slash)(prefix)(colon)(parenthesis open)(Rge-format Expressions / Nothing if no subcomponent exists)(parenthesis close)(space)(Description)
+    - Tel(1): Example: - Aco: Si/C:(M:(Obj1, Obj2), C:(Implementation #1), P:(Dep:: libncurses-dev)) An Example Aco Component Object
+    - Tel(2): If Name is needed for an Aco Object, use the L: prefix.
+    - Tel(3): An Aco Object can contain subcomponents or keyword lines under itself.
+    - Tel(4): This object acts like a compact expression of a Component, or an extended expression of a Dss Component.
   - Com: C:(Text)
     - Dsc: Plain literal text for trivial notes or string literals.
     - Tel: Tel lines are NOT important unless it is under DocsComponent.
@@ -74,6 +81,10 @@
   - Dss(4): C:(Prefix I):: 'I', Internal files (e.g. .git).
   - Dss(5): C:(Prefix D):: 'D', Documentation file.
   - Dss(6): C:(Prefix M):: 'M', Symbol in a source file (Mark).
+  - Dss(7): C:(Prefix L):: 'L', Name of an Aco Object. Only used within a Range expression field of an Aco Object. (Label)
+  - Dss(8): C:(Prefix E):: 'E', Descriptive range of a component. Only used within a Range expression field of an Aco Object. (range, in Expression)
+  - Dss(8): C:(Prefix G):: 'G', Goal. Only used within a Range expression field of an Aco Object. (Goal)
+  - Dss(8): C:(Prefix P):: 'P', Prio. Only used within a Range expression field of an Aco Object. (Priority)
   - Tel(0): Multiple prefixes must be separated by comma.
   - Tel(1): Prefix before parentheses apply prefix to all Group elements.
   - Tel(2): Whitespace-containing elements must be in parentheses.
