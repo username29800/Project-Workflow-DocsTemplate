@@ -14,8 +14,9 @@
   - Tel: Titles(Headings beginning with #) are NOT allowed for keyword lines.
   - Tel(1): Keyword lines can be numbered like: '- \[keyword\]([number]): '.
   - Tel(2): Keywords without numbers are considered '- \[keyword\](0)', and have the highest priority among the lines with the same keyword.
-  - Tel(3): Keyword lines with lower numbering have higher priority over others.
-  - Tel(4): Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces).
+  - Tel(3): Com, Dss, Aco lines cannot be numbered, as they define components.
+  - Tel(4): Keyword lines with lower numbering have higher priority over others.
+  - Tel(5): Keyword lines can be preceded by one or more steps of indentation (1 step = 2 spaces).
 - Com: C:(Keywords)
   - Dsc: The list of allowed keywords and their usage.
   - Com: C:(Component)
