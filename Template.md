@@ -32,10 +32,11 @@
     - Tel: Format: (indentation)(dash)(space)Aco(colon)(space)(Ps abbrev)(slash)(prefix)(colon)(parenthesis open)(Rge-format Expressions / Nothing if no subcomponent exists)(parenthesis close)(space)(Description)
     - Tel(1): Example: - Aco: Si/C:(M:(Obj1, Obj2), C:(Implementation #1), P:(Dep:: libncurses-dev)) An Example Aco Component Object
     - Tel(2): Example: - Aco: S0/C:(L:(Example 1)) Yet another example Object without any range but containing name only.
+    - Tel(3): Example: - Aco: Sq/S:(L:(Script.cs)) A Script type Component-Object with name Script.cs. This means that this Component points to an existing script, and implies that the name of the script is Script.cs.
     - Tel(3): If Name is needed for an Aco Object, use the L: prefix.
     - Tel(4): An Aco Object can contain subcomponents or keyword lines under itself.
     - Tel(5): This object acts like a compact expression of a Component, or an extended expression of a Dss Component.
-    - Tel(6): Note: every element in the range field must have a prefix, and must be nested in parentheses if it contains any whitespace.
+    - Tel(6): Note: every element in the range field must have a prefix, and must be nested in parentheses if it contains any whitespace or it is a group of elements.
   - Com: C:(Text)
     - Dsc: Plain literal text for trivial notes or string literals.
     - Tel: Tel lines are NOT important unless it is under DocsComponent.
