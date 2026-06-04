@@ -28,7 +28,7 @@
     - Tel(4): Do not create an Empty Component or NanoComponent. Use Dss for NanoComponents Instead.
     - Tel(5): A Component only containing Dsc and Tel(or Dss) is treated as DocsComponent
     - Tel(6): DocsComponents are for providing Detailed Instructions or Information.
-  - Com: C:(Aco)
+  - Com: C:(O)
     - Dsc: Anonymous Component Object - a One-liner expression for an unnamed, full-featured component
     - Tel: Format: (indentation)(dash)(space)Aco(colon)(space)(Ps abbrev)(slash)(prefix)(colon)(parenthesis open)(Rge-format Expressions / Nothing if no subcomponent exists)(parenthesis close)(space)(Description)
     - Tel(1): Example: - Aco: Si/C:(M:(Obj1, Obj2), C:(Implementation #1), P:(Dep:: libncurses-dev)) An Example Aco Component Object
