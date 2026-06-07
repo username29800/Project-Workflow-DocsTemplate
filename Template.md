@@ -85,11 +85,12 @@
   - Dss(4): C:(Prefix I):: 'I', Internal files (e.g. .git).
   - Dss(5): C:(Prefix D):: 'D', Documentation file.
   - Dss(6): C:(Prefix M):: 'M', Symbol in a source file (Mark).
-  - Dss(7): C:(Prefix L):: 'L', Name of an Aco Object. Only used within a Range expression field of an Aco Object. (Label)
-  - Dss(8): C:(Prefix E):: 'E', Descriptive range of a component. Only used within a Range expression field of an Aco Object. (range, in Expression)
-  - Dss(8): C:(Prefix G):: 'G', Goal. Only used within a Range expression field of an Aco Object. (Goal)
-  - Dss(8): C:(Prefix P):: 'P', Prio. Only used within a Range expression field of an Aco Object. (Priority)
-  - Tel(0): Multiple prefixes must be separated by comma.
+  - Dss(7): C:(Prefix L):: 'L', Name of an Aco Object. Only used within a Range expression field of an Aco Object. (Label) Deprecated.
+  - Dss(8): C:(Prefix DR):: 'DR', Descriptive range of a component. Only used within a Range expression field of an O Object. (range, in Expression)
+  - Dss(9): C:(Prefix G):: 'G', Goal. Only used within a Range expression field of an Aco Object. (Goal)
+  - Dss(10): C:(Prefix P):: 'P', Prio. Only used within a Range expression field of an Aco Object. (Priority)
+  - Dss(11): C:(Prefix B64):: 'B64', Base64. Base64 encoded data object. Intended to contain binary/non-text data.
+  - Tel(0): Only a single prefix is allowed for an element.
   - Tel(1): Prefix before parentheses apply prefix to all Group elements without any preceding prefix.
   - Tel(2): Whitespace-containing elements must be in parentheses.
 
